@@ -1,0 +1,11 @@
+/lib
+/tmp
+/app/output
+/app/reports
+/app/config
+*.jpg
+*.gif
+*.png
+*.jpeg
+*.pdf
+*.csv
