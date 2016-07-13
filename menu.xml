@@ -1,0 +1,76 @@
+<menu>
+    <menuitem label='Administration'>
+        <icon>fa:university fa-fw</icon>
+        <menu>
+              <menuitem label='Programs'>
+                  <icon>fa:file-code-o fa-fw</icon>
+                  <action>SystemProgramList</action>
+              </menuitem>
+              <menuitem label='Groups'>
+                  <icon>fa:users fa-fw</icon>
+                  <action>SystemGroupList</action>
+              </menuitem>
+              <menuitem label='Users'>
+                  <icon>fa:user fa-fw</icon>
+                  <action>SystemUserList</action>
+              </menuitem>
+              <menuitem label='SQL Panel'>
+                  <icon>fa:table fa-fw</icon>
+                  <action>SystemSQLPanel</action>
+              </menuitem>
+              <menuitem label='PHP Info'>
+                  <icon>fa:code fa-fw</icon>
+                  <action>SystemPHPInfoView</action>
+              </menuitem>
+        </menu>
+    </menuitem>
+    
+    <menuitem label='Logs'>
+        <icon>fa:desktop fa-fw</icon>
+        <menu>
+              <menuitem label='Access Log'>
+                  <icon>fa:key fa-fw</icon>
+                  <action>SystemAccessLogList</action>
+              </menuitem>
+              <menuitem label='Change Log'>
+                  <icon>fa:film fa-fw</icon>
+                  <action>SystemChangeLogView</action>
+              </menuitem>
+              <menuitem label='SQL Log'>
+                  <icon>fa:database fa-fw</icon>
+                  <action>SystemSqlLogList</action>
+              </menuitem>
+        </menu>
+    </menuitem>
+        
+    <menuitem label='Cadastros'>
+        <menu>
+            <menuitem label='Circular'>
+                <icon></icon>
+                <action>CircularFormList</action>
+            </menuitem>
+            <menuitem label='Common page 2'>
+                <icon></icon>
+                <action>CommonPage</action>
+            </menuitem>
+            <menuitem label='Common page 3'>
+                <icon></icon>
+                <action>CommonPage</action>
+            </menuitem>
+        </menu>
+    </menuitem>
+    
+    <menuitem label='Logout'>
+        <menu>
+              <menuitem label='Profile'>
+                  <icon></icon>
+                  <action>SystemProfileView</action>
+              </menuitem>
+              
+              <menuitem label='Logout'>
+                  <action>LoginForm#method=onLogout#static=1</action>
+                  <icon>fa:sign-out fa-fw</icon>
+              </menuitem>
+        </menu>
+    </menuitem>
+</menu>

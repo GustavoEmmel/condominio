@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Adianti Framework ERP Template III</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    {LIBRARIES}
+    {HEAD}
+    <script>
+        $(function() {
+            $.get('engine.php?class=SearchBox', function(data)
+            {
+              $('.navbar-custom-menu').append(data).show();
+              var search_box = $('.navbar-nav').nextAll('div');
+              search_box.css('padding-top', '10px');
+              search_box.css('padding-left', '25px');
+              search_box.css('display', 'table');
+              search_box.css('float', 'left');
+              search_box.attr('id', 'search-box');
+            });
+        });
+    </script>
+    <link rel="stylesheet" href="app/templates/{template}/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="app/templates/{template}/css/skins/skin-blue.min.css">
+  </head>
+  <body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+
+      <header class="main-header">
+        <!-- Logo -->
+        <a href="http://www.adianti.com.br/framework" target="newwindow" class="logo">
+          <!-- mini logo for sidebar mini 50x50 pixels -->
+          <span class="logo-mini"><b>AT</b>3</span>
+          <!-- logo for regular state and mobile devices -->
+          <span class="logo-lg"><b>Adianti</b>Template III</span>
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top" role="navigation">
+          <!-- Sidebar toggle button-->
+          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+              <!-- Messages: style can be found in dropdown.less-->
+              <li class="dropdown messages-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="fa fa-envelope-o"></i>
+                  <span class="label label-success">4</span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="header">You have 4 messages</li>
+                  <li>
+                    <!-- inner menu: contains the actual data -->
+                    <ul class="menu">
+                      <li><!-- start message -->
+                        <a href="#">
+                          <div class="pull-left">
+                            <i class="fa fa-user fa-3x"></i>
+                          </div>
+                          <h4>
+                            Support Team
+                            <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                          </h4>
+                          <p>Why not buy a new awesome theme?</p>
+                        </a>
+                      </li><!-- end message -->
+                      <li>
+                        <a href="#">
+                          <div class="pull-left">
+                            <i class="fa fa-user fa-3x"></i>
+                          </div>
+                          <h4>
+                            AdminLTE Design Team
+                            <small><i class="fa fa-clock-o"></i> 2 hours</small>
+                          </h4>
+                          <p>Why not buy a new awesome theme?</p>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <div class="pull-left">
+                            <i class="fa fa-user fa-3x"></i>
+                          </div>
+                          <h4>
+                            Developers
+                            <small><i class="fa fa-clock-o"></i> Today</small>
+                          </h4>
+                          <p>Why not buy a new awesome theme?</p>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <div class="pull-left">
+                            <i class="fa fa-user fa-3x"></i>
+                          </div>
+                          <h4>
+                            Sales Department
+                            <small><i class="fa fa-clock-o"></i> Yesterday</small>
+                          </h4>
+                          <p>Why not buy a new awesome theme?</p>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <div class="pull-left">
+                            <i class="fa fa-user fa-3x"></i>
+                          </div>
+                          <h4>
+                            Reviewers
+                            <small><i class="fa fa-clock-o"></i> 2 days</small>
+                          </h4>
+                          <p>Why not buy a new awesome theme?</p>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="footer"><a href="#">See All Messages</a></li>
+                </ul>
+              </li>
+              <!-- Notifications: style can be found in dropdown.less -->
+              <li class="dropdown notifications-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="fa fa-bell-o"></i>
+                  <span class="label label-warning">10</span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="header">You have 10 notifications</li>
+                  <li>
+                    <!-- inner menu: contains the actual data -->
+                    <ul class="menu">
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the page and may cause design problems
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-users text-red"></i> 5 new members joined
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-shopping-cart text-green"></i> 25 sales made
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-user text-red"></i> You changed your username
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="footer"><a href="#">View all</a></li>
+                </ul>
+              </li>
+              <!-- User Account: style can be found in dropdown.less -->
+              <li class="dropdown user user-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="fa fa-user"></i>
+                  <span class="hidden-xs">{username}</span>
+                </a>
+                <ul class="dropdown-menu">
+                  <!-- User image -->
+                  <li class="user-header" style="height:initial">
+                    <i class="fa fa-user fa-3x" style="color:white"></i>
+                    <p>
+                      {username}
+                    </p>
+                  </li>
+                  <!-- Menu Body -->
+                  <!-- Menu Footer-->
+                  <li class="user-footer">
+                    <div class="pull-left">
+                      <a generator="adianti" href="index.php?class=SystemProfileView" class="btn btn-default btn-flat">Profile</a>
+                    </div>
+                    <div class="pull-right">
+                      <a generator="adianti" href="index.php?class=LoginForm&method=onLogout&static=1" class="btn btn-default btn-flat">Sign out</a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <!-- Left side column. contains the logo and sidebar -->
+      <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+          <!-- Sidebar user panel -->
+          <div class="user-panel">
+            <div class="pull-left image">
+              <i class="fa fa-user fa-2x" style="color:white"></i>
+            </div>
+            <div class="pull-left info" style="position:initial">
+              <p>{username}</p>
+            </div>
+          </div>
+          <!-- search form -->
+          <!-- /.search form -->
+          <!-- sidebar menu: : style can be found in sidebar.less -->
+          <ul class="sidebar-menu">
+          <li class="header">MAIN NAVIGATION</li>
+          </ul>
+          {MENU}
+        </section>
+        <!-- /.sidebar -->
+      </aside>
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Main content -->
+        <section class="content">
+            <div id='adianti_div_content'>
+            </div>
+        </section><!-- /.content -->
+        
+        <div id="adianti_online_content"></div>
+        <div id="adianti_online_content2"></div>
+        
+      </div><!-- /.content-wrapper -->
+      <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+          <b>Version</b> x.y.z
+        </div>
+        <strong>Footer</strong>
+      </footer>
+
+
+      <!-- Add the sidebar's background. This div must be placed
+           immediately after the control sidebar -->
+      <div class="control-sidebar-bg"></div>
+    </div><!-- ./wrapper -->
+
+    <!-- AdminLTE App -->
+    <script src="app/templates/{template}/js/app.min.js"></script>
+  </body>
+</html>

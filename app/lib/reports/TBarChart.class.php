@@ -1,0 +1,59 @@
+<?php
+/**
+ * Classe para geração de gráficos de barras
+ */
+final class TBarChart extends TChart
+{
+    private $data;
+    private $xlabels;
+    private $ylabel;
+    
+    /**
+     * Método construtor
+     * @param $chartDesigner objeto TChartDesigner
+     */
+    public function __construct(TChartDesigner $chartDesigner)
+    {
+        parent::__construct($chartDesigner);
+        
+        $this->data = array();
+    }
+    
+    /**
+     * Define os rótulos do eixo X do gráfico
+     * @param $labels vetor com rótulos
+     */
+    public function setXLabels($labels)
+    {
+        $this->xlabels = $labels;
+    }
+    
+    /**
+     * Define o rótulo do eixo Y do gráfico
+     * @param $label rótulo
+     */
+    public function setYLabel($label)
+    {
+        $this->ylabel = $label;
+    }
+    
+    /**
+     * Adiciona uma série de dados ao gráfico
+     * @param $legend legenda para a série de dados
+     * @param $data série de dados
+     */
+    public function addData($legend, $data)
+    {
+        $this->data[$legend] = $data;
+    }
+    
+    /**
+     * Gera o gráfico
+     */
+    public function generate()
+    {
+        $this->chartDesigner->drawBarChart($this->title, $this->data, $this->xlabels, $this->ylabel, 
+                                           $this->width, $this->height, $this->outputPath);
+    }
+}
+?>

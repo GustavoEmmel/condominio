@@ -1,0 +1,40 @@
+<?php
+/**
+ * Classe para geração de gráficos de torta
+ */
+final class TPieChart extends TChart
+{
+    private $data;
+    
+    /**
+     * Método construtor
+     * @param $chartDesigner objeto TChartDesigner
+     */
+    public function __construct(TChartDesigner $chartDesigner)
+    {
+        parent::__construct($chartDesigner);
+        
+        $this->data = array();
+    }
+    
+    /**
+     * Adiciona dados ao gráfico
+     * @param $legend palavra para legenda
+     * @param $value  valor
+     */
+    public function addData($legend, $value)
+    {
+        $this->data[$legend] = $value;
+    }
+    
+    /**
+     * Gera o gráfico
+     */
+    public function generate()
+    {
+        $this->chartDesigner->drawPieChart($this->title, $this->data,
+                                           $this->width, $this->height, $this->outputPath);
+    }
+}
+
+?>
