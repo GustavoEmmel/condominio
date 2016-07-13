@@ -1,0 +1,5 @@
+AuthUserFile /root/.htpasswd
+AuthGroupFile /dev/null
+AuthType Basic
+AuthName "restricted area"
+require valid-user
