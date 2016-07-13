@@ -31,15 +31,16 @@ class CircularFormList extends TPage
         $id = new THidden('id');
         $titulo = new TEntry('titulo');
         $descricao = new TText('descricao');
+        $descricao->setSize('100%', '400');
         $cadastro = new TDate('cadastro');
         $cadastro->setMask('dd/mm/yyyy');        
         $cadastro->setValue(date('d/m/Y')); 
 
         // add the fields
         $this->form->addQuickField('', $id,  100 );
-        $this->form->addQuickField('Cadastro:', $cadastro,  100 );
-        $this->form->addQuickField('Título:', $titulo,  275 , new TRequiredValidator);
-        $this->form->addQuickField('Descrição:', $descricao,  275 , new TRequiredValidator);
+        $this->form->addQuickField('Cadastro:', $cadastro, 90 );
+        $this->form->addQuickField('Título:', $titulo,  '100%' , new TRequiredValidator);
+        $this->form->addQuickField('Descrição:', $descricao,  null , new TRequiredValidator);
 
         /** samples
          $this->form->addQuickFields('Date', array($date1, new TLabel('to'), $date2)); // side by side fields
