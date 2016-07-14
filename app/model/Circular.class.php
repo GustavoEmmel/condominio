@@ -19,6 +19,7 @@ class Circular extends TRecord
         parent::addAttribute('titulo');
         parent::addAttribute('descricao');
         parent::addAttribute('cadastro');
+        parent::addAttribute('id_system_user');
     }
 
 

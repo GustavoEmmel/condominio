@@ -34,13 +34,18 @@ class CircularFormList extends TPage
         $descricao->setSize('100%', '400');
         $cadastro = new TDate('cadastro');
         $cadastro->setMask('dd/mm/yyyy');        
-        $cadastro->setValue(date('d/m/Y')); 
+        $cadastro->setValue(date('d/m/Y'));
+        $id_criador = new THidden('id_system_user');
+        $nome_criador = new TEntry('nome_criador'); 
+        $nome_criador->setEditable(FALSE);
 
         // add the fields
         $this->form->addQuickField('', $id,  100 );
         $this->form->addQuickField('Cadastro:', $cadastro, 90 );
         $this->form->addQuickField('Título:', $titulo,  '100%' , new TRequiredValidator);
         $this->form->addQuickField('Descrição:', $descricao,  null , new TRequiredValidator);
+        $this->form->addQuickField('Criado por:', $nome_criador,  '100%' );
+        $this->form->addQuickField('', $id_criador );
 
         /** samples
          $this->form->addQuickFields('Date', array($date1, new TLabel('to'), $date2)); // side by side fields
@@ -57,7 +62,6 @@ class CircularFormList extends TPage
         ##LIST_DECORATOR##
         $this->datagrid->style = 'width: 100%';
         $this->datagrid->setHeight(320);
-      //   $this->datagrid->datatable = 'true';
         $this->datagrid->enablePopover('Descrição', '{descricao}');
 
         // creates the datagrid columns
@@ -70,7 +74,6 @@ class CircularFormList extends TPage
         $this->datagrid->addColumn($column_id);
         $this->datagrid->addColumn($column_cadastro);
         $this->datagrid->addColumn($column_titulo);
-     //   $this->datagrid->addColumn($column_descricao);
      
         $column_cadastro->setTransformer(array('StringsUtil', 'formatDateBR'));
         
@@ -78,14 +81,12 @@ class CircularFormList extends TPage
         $action1 = new TDataGridAction(array($this, 'onEdit'));
         $action1->setUseButton(TRUE);
         $action1->setButtonClass('btn btn-default');
-     //   $action1->setLabel(_t('Edit'));
         $action1->setImage('fa:pencil-square-o blue fa-lg');
         $action1->setField('id');
         
         $action2 = new TDataGridAction(array($this, 'onDelete'));
         $action2->setUseButton(TRUE);
         $action2->setButtonClass('btn btn-default');
-   //     $action2->setLabel(_t('Delete'));
         $action2->setImage('fa:trash-o red fa-lg');
         $action2->setField('id');
         
@@ -277,6 +278,10 @@ class CircularFormList extends TPage
                 TTransaction::open('condo'); // open a transaction
                 $object = new Circular($key); // instantiates the Active Record
                 $object->cadastro = $this->string->formatDateBR($object->cadastro);
+                
+                $user = new SystemUser($object->id_system_user);
+                
+                $object->nome_criador = $user->name;
                 $this->form->setData($object); // fill the form
                 TTransaction::close(); // close the transaction
             }
